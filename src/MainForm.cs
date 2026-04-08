@@ -40,10 +40,9 @@ public class MainForm : Form
         SuspendLayout();
 
         Text            = "Audiobook Maker";
-        AutoScaleMode   = AutoScaleMode.None;
-        AutoScroll      = true;
-        ClientSize      = new Size(720, 600);
-        MinimumSize     = new Size(720, 400);
+        AutoScroll  = true;
+        ClientSize  = new Size(720, 600);
+        MinimumSize = new Size(720, 400);
         StartPosition   = FormStartPosition.CenterScreen;
         FormBorderStyle = FormBorderStyle.Sizable;
         BackColor       = Palette.Base;
