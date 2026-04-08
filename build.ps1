@@ -21,7 +21,7 @@ if (-not (Get-Command dotnet -ErrorAction SilentlyContinue)) {
     Write-Error '.NET SDK not found. Download it from https://dot.net and re-run.'
 }
 
-$proj   = Join-Path $PSScriptRoot 'AudiobookMaker.csproj'
+$proj   = Join-Path $PSScriptRoot 'src\AudiobookMaker.csproj'
 $outDir = Join-Path $PSScriptRoot 'publish'
 
 Write-Host 'Building AudiobookMaker...'
