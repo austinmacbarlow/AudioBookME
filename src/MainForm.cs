@@ -114,13 +114,14 @@ public class MainForm : Form
         Controls.Add(new Label
         {
             Text = "\"Copy\" = stream copy, instant (AAC sources only)",
-            Location = new Point(208, y + 3), Size = new Size(350, 18),
+            Location = new Point(208, y + 3), Size = new Size(460, 18),
             ForeColor = Palette.Subtext, Font = new Font("Segoe UI", 8.5f)
         });
+        y += 26;
 
-        SecLabel("Sort:", y, 515);
-        rdoName = new RadioButton { Text = "Filename", Location = new Point(550, y), Size = new Size(88, 22), Checked = true, ForeColor = Palette.Text, BackColor = Palette.Base };
-        rdoDate = new RadioButton { Text = "Date",     Location = new Point(642, y), Size = new Size(68, 22), ForeColor = Palette.Text, BackColor = Palette.Base };
+        RowLabel("Sort:", y);
+        rdoName = new RadioButton { Text = "Filename", Location = new Point(120, y), Size = new Size(90, 22), Checked = true, ForeColor = Palette.Text, BackColor = Palette.Base };
+        rdoDate = new RadioButton { Text = "Date",     Location = new Point(214, y), Size = new Size(70, 22), ForeColor = Palette.Text, BackColor = Palette.Base };
         Controls.Add(rdoName); Controls.Add(rdoDate);
         y += 26;
 
@@ -263,7 +264,7 @@ public class MainForm : Form
 
     TextBox Input(int x, int y, int w)
     {
-        var t = new TextBox { Location = new Point(x, y - 1), Size = new Size(w, 24),
+        var t = new TextBox { Location = new Point(x, y - 1), Width = w,
             BackColor = Palette.Input, ForeColor = Palette.Text,
             BorderStyle = BorderStyle.FixedSingle, Font = Font };
         Controls.Add(t); return t;
