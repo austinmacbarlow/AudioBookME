@@ -1,0 +1,30 @@
+# Build output
+bin/
+obj/
+publish/
+new_exe/bin/
+new_exe/obj/
+new_exe/publish/
+
+# VS / Rider
+.vs/
+*.user
+*.suo
+
+# Temp files from conversion
+_m4b_tmp/
+
+# Binaries / media (don't commit large files)
+ffmpeg.exe
+AudiobookMaker.exe
+*.m4b
+*.mp3
+*.m4a
+*.aac
+*.flac
+*.opus
+*.ogg
+*.wma
+
+# Local build workspace (source lives at repo root)
+new_exe/
