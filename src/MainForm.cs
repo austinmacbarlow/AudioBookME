@@ -41,8 +41,9 @@ public class MainForm : Form
 
         Text            = "Audiobook Maker";
         AutoScaleMode   = AutoScaleMode.None;
-        ClientSize      = new Size(720, 655);
-        MinimumSize     = new Size(720, 620);
+        AutoScroll      = true;
+        ClientSize      = new Size(720, 600);
+        MinimumSize     = new Size(720, 400);
         StartPosition   = FormStartPosition.CenterScreen;
         FormBorderStyle = FormBorderStyle.Sizable;
         BackColor       = Palette.Base;
@@ -208,7 +209,7 @@ public class MainForm : Form
         txtLog = new RichTextBox
         {
             Location = new Point(12, y), Size = new Size(696, 60),
-            Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right,
+            Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right,
             ReadOnly = true,
             BackColor = Color.FromArgb(22, 40, 28), ForeColor = Color.FromArgb(212, 237, 218),
             Font = new Font("Consolas", 9f), ScrollBars = RichTextBoxScrollBars.Vertical,
