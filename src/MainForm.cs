@@ -39,7 +39,10 @@ public class MainForm : Form
     {
         SuspendLayout();
 
-        Text            = "Audiobook Maker";
+        AutoScaleDimensions = new SizeF(96F, 96F);
+        AutoScaleMode       = AutoScaleMode.Dpi;
+
+        Text        = "Audiobook Maker";
         AutoScroll  = true;
         ClientSize  = new Size(720, 600);
         MinimumSize = new Size(720, 400);
