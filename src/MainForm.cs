@@ -41,8 +41,8 @@ public class MainForm : Form
 
         Text            = "Audiobook Maker";
         AutoScaleMode   = AutoScaleMode.None;
-        ClientSize      = new Size(720, 790);
-        MinimumSize     = new Size(720, 750);
+        ClientSize      = new Size(720, 655);
+        MinimumSize     = new Size(720, 620);
         StartPosition   = FormStartPosition.CenterScreen;
         FormBorderStyle = FormBorderStyle.Sizable;
         BackColor       = Palette.Base;
@@ -73,27 +73,27 @@ public class MainForm : Form
         txtInput     = Input(120, y, 322); txtInput.ReadOnly = true;
         btnBrowseIn  = UtilBtn("Browse", 450, y - 1, 76);
         btnAddFolder = UtilBtn("+ Add",  532, y - 1, 66);
-        y += 30;
+        y += 26;
 
         RowLabel("Output File:", y);
         txtOutput    = Input(120, y, 522);
         btnBrowseOut = UtilBtn("Browse", 648, y - 1, 64);
-        y += 30;
+        y += 26;
 
         // ── Metadata ──────────────────────────────────────────────────────────
-        y += 10; Divider(y); y += 6; SecLabel("Metadata", y); y += 20;
+        y += 6; Divider(y); y += 4; SecLabel("Metadata", y); y += 14;
 
-        RowLabel("Book Title:", y);  txtTitle  = Input(120, y, 572); y += 30;
-        RowLabel("Author:",     y);  txtAuthor = Input(120, y, 572); y += 30;
-        RowLabel("Series:",     y);  txtSeries = Input(120, y, 572); y += 30;
+        RowLabel("Book Title:", y);  txtTitle  = Input(120, y, 572); y += 26;
+        RowLabel("Author:",     y);  txtAuthor = Input(120, y, 572); y += 26;
+        RowLabel("Series:",     y);  txtSeries = Input(120, y, 572); y += 26;
 
         RowLabel("Cover Art:", y);
         txtCoverArt    = Input(120, y, 458); txtCoverArt.ReadOnly = true;
         btnBrowseCover = UtilBtn("Browse", 586, y - 1, 106);
-        y += 30;
+        y += 26;
 
         // ── Options ───────────────────────────────────────────────────────────
-        y += 10; Divider(y); y += 6; SecLabel("Options", y); y += 20;
+        y += 6; Divider(y); y += 4; SecLabel("Options", y); y += 14;
 
         RowLabel("Bitrate:", y);
         cmbBitrate = new ComboBox
@@ -119,14 +119,14 @@ public class MainForm : Form
         rdoName = new RadioButton { Text = "Filename", Location = new Point(550, y), Size = new Size(88, 22), Checked = true, ForeColor = Palette.Text, BackColor = Palette.Base };
         rdoDate = new RadioButton { Text = "Date",     Location = new Point(642, y), Size = new Size(68, 22), ForeColor = Palette.Text, BackColor = Palette.Base };
         Controls.Add(rdoName); Controls.Add(rdoDate);
-        y += 30;
+        y += 26;
 
         // ── File list ─────────────────────────────────────────────────────────
-        y += 10; Divider(y); y += 6; SecLabel("Files  (double-click Chapter Name to edit)", y); y += 20;
+        y += 6; Divider(y); y += 4; SecLabel("Files  (double-click Chapter Name to edit)", y); y += 14;
 
         dgvFiles = new DataGridView
         {
-            Location  = new Point(12, y), Size = new Size(544, 116),
+            Location  = new Point(12, y), Size = new Size(544, 80),
             AllowUserToAddRows = false, AllowUserToDeleteRows = false,
             SelectionMode = DataGridViewSelectionMode.FullRowSelect,
             MultiSelect = false, RowHeadersVisible = false,
@@ -151,7 +151,7 @@ public class MainForm : Form
         btnDown    = SideBtn("▼  Down",    bx, by); by += 32;
         btnRemove  = SideBtn("✕  Remove",  bx, by); by += 32;
         btnRefresh = SideBtn("↺  Refresh", bx, by);
-        y += 126;
+        y += 90;
 
         // ── Progress ──────────────────────────────────────────────────────────
         y += 8;
@@ -203,11 +203,11 @@ public class MainForm : Form
         y += 38;
 
         // ── Log ───────────────────────────────────────────────────────────────
-        y += 8; Divider(y); y += 6; SecLabel("Log", y); y += 18;
+        y += 6; Divider(y); y += 4; SecLabel("Log", y); y += 12;
 
         txtLog = new RichTextBox
         {
-            Location = new Point(12, y), Size = new Size(696, 80),
+            Location = new Point(12, y), Size = new Size(696, 60),
             Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right,
             ReadOnly = true,
             BackColor = Color.FromArgb(22, 40, 28), ForeColor = Color.FromArgb(212, 237, 218),
