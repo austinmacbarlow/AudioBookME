@@ -264,10 +264,22 @@ public class MainForm : Form
 
     TextBox Input(int x, int y, int w)
     {
-        var t = new TextBox { Location = new Point(x, y - 1), Width = w,
+        var t = new TextBox
+        {
             BackColor = Palette.Input, ForeColor = Palette.Text,
-            BorderStyle = BorderStyle.FixedSingle, Font = Font };
-        Controls.Add(t); return t;
+            BorderStyle = BorderStyle.None, Font = Font
+        };
+        var border = new Panel
+        {
+            Location = new Point(x, y),
+            Size = new Size(w, t.PreferredHeight + 2),
+            BackColor = Palette.Border,
+            Padding = new Padding(1)
+        };
+        t.Dock = DockStyle.Fill;
+        border.Controls.Add(t);
+        Controls.Add(border);
+        return t;
     }
 
     Button UtilBtn(string text, int x, int y, int w = 80)
